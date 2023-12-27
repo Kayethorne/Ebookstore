@@ -43,11 +43,12 @@ def enter_book():
     conn.commit()
     print("Book added successfully.")
 
+# Updating the book's inventory/information    
 def update_book():
     book_id = int(input("Please enter the id of the book to update: "))
     new_qty = int(input("Enter the new quantity for the book: "))
 
-    # Code to update book info
+    # Code to update the book's information
     cursor.execute('''
         UPDATE books
         SET qty = ?
@@ -56,6 +57,7 @@ def update_book():
     conn.commit()
     print("Book updated successfully.")
 
+# Delete a book from the database
 def delete_book():
     # Get user input for book id to delete
     book_id = int(input("Enter the id of the book to delete: "))
@@ -68,6 +70,7 @@ def delete_book():
     conn.commit()
     print("Book deleted successfully.")
 
+# Code to search for a specific book
 def search_books():
     # Get user input for book title to search
     search_title = input("Enter the title of the book to search for: ")
