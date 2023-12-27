@@ -73,13 +73,13 @@ def delete_book():
 # Code to search for a specific book
 def search_books():
     # Get user input for book title to search
-    search_title = input("Enter the title of the book to search for: ")
+    search_titles = input("Enter the title of the book to search for: ")
 
     # Code to search for a book
     cursor.execute('''
         SELECT * FROM books
         WHERE title LIKE ?
-    ''', ('%' + search_title + '%',))
+    ''', ('%' + search_titles + '%',))
 
     results = cursor.fetchall()
 
